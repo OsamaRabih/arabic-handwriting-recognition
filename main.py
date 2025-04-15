@@ -44,6 +44,13 @@ st.markdown(
 )
 
 # Initialise session state variables
+## Initialise secrets with defaults if not in production
+if 'max_upload_size' not in st.session_state:
+    st.session_state.max_upload_size = 10  # Default 10MB
+    try:
+        st.session_state.max_upload_size = int(st.secrets.get("MAX_UPLOAD_SIZE", 10))
+    except:
+        pass  # Fallback to default
 if 'model' not in st.session_state:
     st.session_state.model = None
     st.session_state.model_save_path = st.secrets.get("MODEL_SAVE_PATH", "/tmp")
