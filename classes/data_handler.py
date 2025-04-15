@@ -6,7 +6,6 @@ DataHandler Module
 import numpy as np
 import pandas as pd
 import streamlit as st
-from streamlit.runtime.scriptrunner import get_script_run_ctx
 
 # Data handling operations
 class DataHandler:
