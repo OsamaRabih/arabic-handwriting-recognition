@@ -26,15 +26,11 @@ class DataHandler:
         
         # Try loading and processing data
         try:
-            # Get Streamlit secrets
-            ctx = get_script_run_ctx()
-            # Default 10MB
-            max_upload_size = int(ctx.secrets.get("MAX_UPLOAD_SIZE", 10))  
-            
+            # Get Streamlit secrets and set default max upload size = 10MB
+            max_upload_size = int(st.secrets.get("MAX_UPLOAD_SIZE", 10)) 
             # Validate file size
-            if features_file.size > max_upload_size * 1024 * 1024 or labels_file.size > max_upload_size * 1024 * 1024:
-                raise ValueError(f"File too large. Max size: {max_upload_size}MB")
-            
+            if features_file.size > max_upload_size * 1024 * 1024:
+                raise ValueError(f"File exceeds maximum size of {max_upload_size}MB")        
             # Validate file objects existence
             if features_file is None or labels_file is None:
                 raise ValueError("No files uploaded")   
