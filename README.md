@@ -1,9 +1,4 @@
 # Arabic Handwriting Recognition System
-Final year project - Arabic handwriting recognition system using CNN-LSTM and an optional Attention Mechanism
-
-![Project Banner](https://via.placeholder.com/800x200?text=Arabic+Handwriting+Recognition+with+CNN-LSTM)
-
-A deep learning system for recognising handwritten Arabic characters using a hybrid CNN-LSTM architecture with optional attention mechanism, deployed as a Streamlit web application.
 
 ![Project Banner](https://via.placeholder.com/1200x400/2D3748/FFFFFF?text=Arabic+Handwriting+Recognition+with+CNN-LSTM+and+Attention+Mechanism)
 
@@ -13,9 +8,15 @@ A deep learning system for recognising handwritten Arabic characters using a hyb
 
 
 ## 🚀 Features
+| Feature | Description |
+|---------|-------------|
+| **Hybrid Architecture** | CNN for spatial features + LSTM for sequential patterns |
+| **Attention Mechanism** | Optional attention layer for improved accuracy |
+| **End-to-End Pipeline** | Data loading → Training → Testing → Prediction |
+| **Interactive UI** | Drawing canvas + file upload + real-time visualization | 
+
   - **Hybrid Architecture**: Combines CNN for spatial features and LSTM for sequential patterns
   - **Attention Mechanism**: Optional attention layer for improved performance
-    
   - **Full Pipeline**: 
     - Data loading and preprocessing
     - Model training with progress tracking
@@ -23,14 +24,7 @@ A deep learning system for recognising handwritten Arabic characters using a hyb
   - **User-Friendly UI**: 
     - Drawing canvas for character input
     - File upload support
-    - Real-time visualisation
-    
-| Feature | Description |
-|---------|-------------|
-| **Hybrid Architecture** | CNN for spatial features + LSTM for sequential patterns |
-| **Attention Mechanism** | Optional attention layer for improved accuracy |
-| **End-to-End Pipeline** | Data loading → Training → Testing → Prediction |
-| **Interactive UI** | Drawing canvas + file upload + real-time visualization |  
+    - Real-time visualisation 
 
 ## 📦 Installation
 ### Prerequisites
@@ -53,8 +47,8 @@ A deep learning system for recognising handwritten Arabic characters using a hyb
 
 ## 🖥️ Usage
 ### Running Locally
-  ```bash
-  streamlit run main.py
+```bash
+streamlit run main.py
 
 ### Application Workflow
   1. Training Page:
