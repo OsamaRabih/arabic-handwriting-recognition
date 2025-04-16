@@ -6,16 +6,16 @@ Final year project - Arabic handwriting recognition system using CNN-LSTM and an
 A deep learning system for recognising handwritten Arabic characters using a hybrid CNN-LSTM architecture with optional attention mechanism, deployed as a Streamlit web application.
 
 ## 🚀 Features
-- **Hybrid Architecture**: Combines CNN for spatial features and LSTM for sequential patterns
-- **Attention Mechanism**: Optional attention layer for improved performance
-- **Full Pipeline**: 
-  - Data loading and preprocessing
-  - Model training with progress tracking
-  - Interactive testing and prediction
-- **User-Friendly UI**: 
-  - Drawing canvas for character input
-  - File upload support
-  - Real-time visualisation
+  - **Hybrid Architecture**: Combines CNN for spatial features and LSTM for sequential patterns
+  - **Attention Mechanism**: Optional attention layer for improved performance
+  - **Full Pipeline**: 
+    - Data loading and preprocessing
+    - Model training with progress tracking
+    - Interactive testing and prediction
+  - **User-Friendly UI**: 
+    - Drawing canvas for character input
+    - File upload support
+    - Real-time visualisation
 
 ## 📦 Installation
 ### Prerequisites
@@ -38,36 +38,37 @@ A deep learning system for recognising handwritten Arabic characters using a hyb
 
 ## 🖥️ Usage
 ### Running Locally
-```bash
-streamlit run main.py
+  ```bash
+  streamlit run main.py
 
 ### Application Workflow
-1. Training Page:
-  - Upload CSV datasets (features and labels)
-  - Configure model with/without attention
-  - Monitor training progress
-2. Testing Page:
-  - Evaluate model performance
-  - View sample predictions
-2.Results Page:
-  - Visualise training metrics
-  - Export model performance data
-3. Prediction Page:
-  - Draw characters or upload images
-  - Get real-time predictions
+  1. Training Page:
+    - Upload CSV datasets (features and labels)
+    - Configure model with/without attention
+    - Monitor training progress
+  2. Testing Page:
+    - Evaluate model performance
+    - View sample predictions
+  2.Results Page:
+    - Visualise training metrics
+    - Export model performance data
+  3. Prediction Page:
+    - Draw characters or upload images
+    - Get real-time predictions
 
 ## 🧠 Model Architecture
-graph TD
-    A[Input Image] --> B[CNN Feature Extraction]
-    B --> C[LSTM Sequence Processing]
-    C --> D{Attention?}
-    D -->|Yes| E[Attention Layer]
-    D -->|No| F[Fully Connected]
-    E --> F
-    F --> G[Softmax Output]
+
+  graph TD
+      A[Input Image] --> B[CNN Feature Extraction]
+      B --> C[LSTM Sequence Processing]
+      C --> D{Attention?}
+      D -->|Yes| E[Attention Layer]
+      D -->|No| F[Fully Connected]
+      E --> F
+      F --> G[Softmax Output]
 
 ## 📂 Project Structure
-arabic-handwriting-recognition/
+  arabic-handwriting-recognition/
   ├── classes/
   │   ├── data_handler.py     # Data loading/preprocessing
   │   ├── model_trainer.py    # Model building/training
@@ -86,31 +87,31 @@ arabic-handwriting-recognition/
   └── README.md               # This file
 
 ## 🌐 Streamlit Cloud Deployment
-1.Fork this repository
-2. Go to Streamlit Cloud https://share.streamlit.io/
-3. Click "New app" and connect your GitHub
-4. Set:
-  - Repository: your fork
-  - Branch: main
-  - Main file path: main.py
-5. Configure secrets in Settings if needed
+  1.Fork this repository
+  2. Go to Streamlit Cloud https://share.streamlit.io/
+  3. Click "New app" and connect your GitHub
+  4. Set:
+    - Repository: your fork
+    - Branch: main
+    - Main file path: main.py
+  5. Configure secrets in Settings if needed
 
 ## 🧪 Testing
-Run unit tests:
-```bash
-pytest tests/ -v
-
-Test coverage:
-```bash
-coverage run -m pytest tests/
-coverage report -m
+  Run unit tests:
+  ```bash
+  pytest tests/ -v
+  
+  Test coverage:
+  ```bash
+  coverage run -m pytest tests/
+  coverage report -m
 
 ## 🤝 Contributing
-1. Fork the project 
-2. Create your feature branch (git checkout -b feature/AmazingFeature)
-3. Commit your changes (git commit -m 'Add some amazing feature')
-4. Push to the branch (git push origin feature/AmazingFeature)
-5 Open a Pull Request
+  1. Fork the project 
+  2. Create your feature branch (git checkout -b feature/AmazingFeature)
+  3. Commit your changes (git commit -m 'Add some amazing feature')
+  4. Push to the branch (git push origin feature/AmazingFeature)
+  5 Open a Pull Request
 
 ## 📜 License
 Distributed under the MIT License. See LICENSE for more information.
