@@ -49,33 +49,33 @@
 ### Running Locally
 streamlit run main.py
 
-### Application Workflow
-  1. Training Page:
+#### Application Workflow
+  1. Training Page: 📊 Upload CSV datasets → ⚙️ Configure model → 📈 Monitor training
     - Upload CSV datasets (features and labels)
     - Configure model with/without attention
     - Monitor training progress
-  2. Testing Page:
+  2. Testing Page: 🧪 Evaluate performance → 👀 View predictions
     - Evaluate model performance
     - View sample predictions
-  2.Results Page:
+  2.Results Page: 👀 Visualise training metrics → 📤 Export model performance data
     - Visualise training metrics
     - Export model performance data
-  3. Prediction Page:
+  3. Prediction Page: ✍️ Draw characters OR 📤 Upload images → 🔮 Get predictions
     - Draw characters or upload images
     - Get real-time predictions
 
 ## 🧠 Model Architecture
-graph TD
-    A[32x32 Input Image] --> B[CNN Block]
-    B --> C[Max Pooling]
-    C --> D[LSTM Layer]
-    D --> E{Attention?}
-    E -->|Yes| F[Attention Mechanism]
-    E -->|No| G[Fully Connected]
-    F --> G
-    G --> H[28-Class Softmax]
-    style A fill:#f9f,stroke:#333
-    style H fill:#4CAF50,stroke:#333
+  graph TD
+      A[32x32 Input Image] --> B[CNN Block]
+      B --> C[Max Pooling]
+      C --> D[LSTM Layer]
+      D --> E{Attention?}
+      E -->|Yes| F[Attention Mechanism]
+      E -->|No| G[Fully Connected]
+      F --> G
+      G --> H[28-Class Softmax]
+      style A fill:#f9f,stroke:#333
+      style H fill:#4CAF50,stroke:#333
 
 ## 📂 Project Structure
   arabic-handwriting-recognition/
