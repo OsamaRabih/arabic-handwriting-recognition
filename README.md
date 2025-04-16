@@ -47,8 +47,8 @@
 
 ## 🖥️ Usage
 ### Running Locally
-    ```bash
-    streamlit run main.py
+  ```bash
+  streamlit run main.py
 
 ### Application Workflow
   1. Training Page:
