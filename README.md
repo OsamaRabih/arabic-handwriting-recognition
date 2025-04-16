@@ -5,9 +5,17 @@ Final year project - Arabic handwriting recognition system using CNN-LSTM and an
 
 A deep learning system for recognising handwritten Arabic characters using a hybrid CNN-LSTM architecture with optional attention mechanism, deployed as a Streamlit web application.
 
+![Project Banner](https://via.placeholder.com/1200x400/2D3748/FFFFFF?text=Arabic+Handwriting+Recognition+with+CNN-LSTM+and+Attention+Mechanism)
+
+**Final year project** - A deep learning system for recognising handwritten Arabic characters using a hybrid CNN-LSTM architecture with optional attention mechanism, deployed as a Streamlit web application.
+
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://arabic-handwriting-recognition.streamlit.app/) ← Live Demo
+
+
 ## 🚀 Features
   - **Hybrid Architecture**: Combines CNN for spatial features and LSTM for sequential patterns
   - **Attention Mechanism**: Optional attention layer for improved performance
+    
   - **Full Pipeline**: 
     - Data loading and preprocessing
     - Model training with progress tracking
@@ -16,6 +24,13 @@ A deep learning system for recognising handwritten Arabic characters using a hyb
     - Drawing canvas for character input
     - File upload support
     - Real-time visualisation
+    
+| Feature | Description |
+|---------|-------------|
+| **Hybrid Architecture** | CNN for spatial features + LSTM for sequential patterns |
+| **Attention Mechanism** | Optional attention layer for improved accuracy |
+| **End-to-End Pipeline** | Data loading → Training → Testing → Prediction |
+| **Interactive UI** | Drawing canvas + file upload + real-time visualization |  
 
 ## 📦 Installation
 ### Prerequisites
@@ -57,15 +72,17 @@ A deep learning system for recognising handwritten Arabic characters using a hyb
     - Get real-time predictions
 
 ## 🧠 Model Architecture
-
-  graph TD
-      A[Input Image] --> B[CNN Feature Extraction]
-      B --> C[LSTM Sequence Processing]
-      C --> D{Attention?}
-      D -->|Yes| E[Attention Layer]
-      D -->|No| F[Fully Connected]
-      E --> F
-      F --> G[Softmax Output]
+graph TD
+    A[32x32 Input Image] --> B[CNN Block]
+    B --> C[Max Pooling]
+    C --> D[LSTM Layer]
+    D --> E{Attention?}
+    E -->|Yes| F[Attention Mechanism]
+    E -->|No| G[Fully Connected]
+    F --> G
+    G --> H[28-Class Softmax]
+    style A fill:#f9f,stroke:#333
+    style H fill:#4CAF50,stroke:#333
 
 ## 📂 Project Structure
   arabic-handwriting-recognition/
@@ -91,20 +108,19 @@ A deep learning system for recognising handwritten Arabic characters using a hyb
   2. Go to Streamlit Cloud https://share.streamlit.io/
   3. Click "New app" and connect your GitHub
   4. Set:
-    - Repository: your fork
+    - Repository: OsamaRabih/arabic-handwriting-recognition
     - Branch: main
     - Main file path: main.py
   5. Configure secrets in Settings if needed
 
 ## 🧪 Testing
-  Run unit tests:
-  ```bash
-  pytest tests/ -v
-  
-  Test coverage:
-  ```bash
-  coverage run -m pytest tests/
-  coverage report -m
+# Run tests
+```bash
+pytest tests/ -v
+# Check coverage
+```bash
+coverage run -m pytest tests/
+coverage report -m
 
 ## 🤝 Contributing
   1. Fork the project 
