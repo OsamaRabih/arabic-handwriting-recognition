@@ -48,9 +48,9 @@
 
 ## 🖥️ Usage
 **Running Locally**: Write this command to run the system in your local machine
-```sh
-streamlit run main.py
-'''
+  ```sh
+  streamlit run main.py
+
 
 ## Application Workflow
 
