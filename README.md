@@ -41,41 +41,32 @@
    python -m venv venv
    source venv/bin/activate  # Linux/Mac
    venv\Scripts\activate     # Windows
+   """bash
 3. Install dependencies:
    ```bash
    pip install -r requirements.txt
+   """bash
 
 ## 🖥️ Usage
 ### Running Locally
+```bash
 streamlit run main.py
+"""bash
 
 #### Application Workflow
-1. Training Page: 📊 Upload CSV datasets → ⚙️ Configure model → 📈 Monitor training
-- Upload CSV datasets (features and labels)
-- Configure model with/without attention
-- Monitor training progress
-2. Testing Page: 🧪 Evaluate performance → 👀 View predictions
- - Evaluate model performance
- - View sample predictions
-3. Results Page: 👀 Visualise training metrics → 📤 Export model performance data
-   
-4. 
-   
-
-
-  4.
-  5.
-  6.
-  7.
-  8. 
-    - 
- 
-  2.
-    -
-    - Export model performance data
-  9. Prediction Page: ✍️ Draw characters OR 📤 Upload images → 🔮 Get predictions
-    - Draw characters or upload images
-    - Get real-time predictions
+1. Training Page:
+  - 📊 Upload CSV datasets (features and labels)
+  - ⚙️ Configure model with/without attention
+  - 📈 Monitor training progress
+2. Testing Page:
+  - 🧪 Evaluate model performance
+  - 👀 View sample predictions
+3. Results Page:
+  - 👀 Visualise training metrics →
+  - 📤 Export model performance data
+4. Prediction Page: 
+  - ✍️ Draw characters OR 📤 Upload images
+  - 🔮 Get real-time predictions
 
 ## 🧠 Model Architecture
   graph TD
@@ -121,15 +112,14 @@ streamlit run main.py
 
 ## 🧪 Testing
 # Run tests
-```bash
+```sh
 pytest tests/ -v
 # Check coverage
-```bash
 coverage run -m pytest tests/
 coverage report -m
-
+"""sh
 ## 🤝 Contributing
-  1. Fork the project 
+  1. Fork the project
   2. Create your feature branch (git checkout -b feature/AmazingFeature)
   3. Commit your changes (git commit -m 'Add some amazing feature')
   4. Push to the branch (git push origin feature/AmazingFeature)
