@@ -27,6 +27,7 @@
     - Real-time visualisation 
 
 ## 📦 Installation
+
 ### Prerequisites
   - Python 3.8-3.11
   - pip or conda
@@ -47,11 +48,12 @@
 
 ## 🖥️ Usage
 **Running Locally**: Write this command to run the system in your local machine
-```bash
+```sh
 streamlit run main.py
-"""
+'''
 
 ## Application Workflow
+
 1. Training Page:
   - 📊 Upload CSV datasets (features and labels)
   - ⚙️ Configure model with/without attention
