@@ -1,6 +1,7 @@
 # Arabic Handwriting Recognition System
 
 ![Project Banner](https://via.placeholder.com/1200x400/2D3748/FFFFFF?text=Arabic+Handwriting+Recognition+with+CNN-LSTM+and+Attention+Mechanism)
+
 Final Year Project @ Bradford College
 
 Supervised by Dr. Sokyna
@@ -51,8 +52,10 @@ Developed by Osama Rabih
    pip install -r requirements.txt
 
 ## 🖥️ Usage
-**Running Locally**: Write this command to run the system in your local machine
-"""bash
+**Running Locally**: 
+Write this command to run the system in your local machine
+
+'''bash
 streamlit run main.py
 
 ## Application Workflow
@@ -72,7 +75,9 @@ streamlit run main.py
     - 🔮 Get real-time predictions
 
 ## 🧠 Model Architecture
+
 graph TD
+
     A[32x32 Input] --> B[Conv2D(32)+BN]
     B --> C[MaxPooling2D]
     C --> D[Conv2D(64)+BN]
@@ -88,7 +93,9 @@ graph TD
 
 
 ## 📂 Project Structure
+
 graph LR
+
     A[main.py] --> B[classes/]
     A --> C[st_pages/]
     B --> D[DataHandler]
@@ -111,7 +118,9 @@ graph LR
 
 ## 🧪 Testing
 ### Run tests
+
 Test this system via running this code:
+
 '''bash
 pytest tests/ -v
 # Check coverage
@@ -131,7 +140,9 @@ Distributed under the MIT License. See LICENSE for more information.
 
 ## 📧 Contact
 **Final year project**
+
 **Osama Rabih** - rabih.osama91@gmail.com
+
 **Project Link** : https://github.com/OsamaRabih/arabic-handwriting-recognition
 
 
