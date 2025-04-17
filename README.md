@@ -41,19 +41,16 @@
    python -m venv venv
    source venv/bin/activate  # Linux/Mac
    venv\Scripts\activate     # Windows
-   """bash
 3. Install dependencies:
    ```bash
    pip install -r requirements.txt
-   """bash
 
 ## 🖥️ Usage
 ### Running Locally
 ```bash
 streamlit run main.py
-"""bash
 
-#### Application Workflow
+## Application Workflow
 1. Training Page:
   - 📊 Upload CSV datasets (features and labels)
   - ⚙️ Configure model with/without attention
@@ -112,12 +109,12 @@ streamlit run main.py
 
 ## 🧪 Testing
 # Run tests
-```sh
+```bash
 pytest tests/ -v
 # Check coverage
 coverage run -m pytest tests/
 coverage report -m
-"""sh
+
 ## 🤝 Contributing
   1. Fork the project
   2. Create your feature branch (git checkout -b feature/AmazingFeature)
