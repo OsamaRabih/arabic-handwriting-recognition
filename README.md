@@ -51,21 +51,20 @@
 ## Application Workflow
 
 1. Training Page:
-  - 📊 Upload CSV datasets (features and labels)
-  - ⚙️ Configure model with/without attention
-  - 📈 Monitor training progress
+    - 📊 Upload CSV datasets (features and labels)
+    - ⚙️ Configure model with/without attention
+    - 📈 Monitor training progress
 2. Testing Page:
-  - 🧪 Evaluate model performance
-  - 👀 View sample predictions
+    - 🧪 Evaluate model performance
+    - 👀 View sample predictions
 3. Results Page:
-  - 👀 Visualise training metrics →
-  - 📤 Export model performance data
+    - 👀 Visualise training metrics →
+    - 📤 Export model performance data
 4. Prediction Page: 
-  - ✍️ Draw characters OR 📤 Upload images
-  - 🔮 Get real-time predictions
+    - ✍️ Draw characters OR 📤 Upload images
+    - 🔮 Get real-time predictions
 
 ## 🧠 Model Architecture
-
 graph TD
   A[32x32 Input Image] --> B[CNN Block]
       B --> C[Max Pooling]
@@ -80,37 +79,38 @@ graph TD
 
 ## 📂 Project Structure
 
-  arabic-handwriting-recognition/
+arabic-handwriting-recognition/
+├── classes/
+│   ├── data_handler.py     # Data loading/preprocessing
+│   ├── model_trainer.py    # Model building/training
+│   └── predictor.py        # Prediction logic
+├── st_pages/
+│   ├── train_page.py       # Training interface
+│   ├── test_page.py        # Testing interface
+│   ├── results_page.py     # Results visualization
+│   ├── predict_page.py     # Prediction interface
+│   └── exit_page.py        # Application exit
+├── tests/                  # Unit tests
+├── .streamlit/             # Configuration
+│   └── secrets.toml        # Local secrets
+├── main.py                 # Main application
+├── requirements.txt        # Dependencies
+└── README.md               # This file
 
-  ├── classes/
-  │   ├── data_handler.py     # Data loading/preprocessing
-  │   ├── model_trainer.py    # Model building/training
-  │   └── predictor.py        # Prediction logic
-  ├── st_pages/
-  │   ├── train_page.py       # Training interface
-  │   ├── test_page.py        # Testing interface
-  │   ├── results_page.py     # Results visualization
-  │   ├── predict_page.py     # Prediction interface
-  │   └── exit_page.py        # Application exit
-  ├── tests/                  # Unit tests
-  ├── .streamlit/             # Configuration
-  │   └── secrets.toml        # Local secrets
-  ├── main.py                 # Main application
-  ├── requirements.txt        # Dependencies
-  └── README.md               # This file
 
 ## 🌐 Streamlit Cloud Deployment
-  1.Fork this repository
-  2. Go to Streamlit Cloud https://share.streamlit.io/
-  3. Click "New app" and connect your GitHub
-  4. Set:
-    - Repository: OsamaRabih/arabic-handwriting-recognition
-    - Branch: main
-    - Main file path: main.py
-  5. Configure secrets in Settings if needed
+
+1.Fork this repository
+2. Go to Streamlit Cloud https://share.streamlit.io/
+3. Click "New app" and connect your GitHub
+4. Set:
+  - Repository: OsamaRabih/arabic-handwriting-recognition
+  - Branch: main
+  - Main file path: main.py
+5. Configure secrets in Settings if needed
 
 ## 🧪 Testing
-# Run tests
+Run tests
 
 ```bash
 pytest tests/ -v
@@ -119,18 +119,19 @@ coverage run -m pytest tests/
 coverage report -m
 
 ## 🤝 Contributing
-  1. Fork the project
-  2. Create your feature branch (git checkout -b feature/AmazingFeature)
-  3. Commit your changes (git commit -m 'Add some amazing feature')
-  4. Push to the branch (git push origin feature/AmazingFeature)
-  5 Open a Pull Request
+1. Fork the project
+2. Create your feature branch (git checkout -b feature/AmazingFeature)
+3. Commit your changes (git commit -m 'Add some amazing feature')
+4. Push to the branch (git push origin feature/AmazingFeature)
+5 Open a Pull Request
 
 ## 📜 License
 Distributed under the MIT License. See LICENSE for more information.
 
 ## 📧 Contact
-Osama Rabih - rabih.osama91@gmail.com
-Project Link: https://github.com/OsamaRabih/arabic-handwriting-recognition
+**Final year project**
+**Osama Rabih** - rabih.osama91@gmail.com
+**Project Link** : https://github.com/OsamaRabih/arabic-handwriting-recognition
 
 
 
