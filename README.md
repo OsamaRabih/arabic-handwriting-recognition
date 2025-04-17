@@ -65,6 +65,7 @@
     - 🔮 Get real-time predictions
 
 ## 🧠 Model Architecture
+
 graph TD
   A[32x32 Input Image] --> B[CNN Block]
       B --> C[Max Pooling]
@@ -79,42 +80,40 @@ graph TD
 
 ## 📂 Project Structure
 
-arabic-handwriting-recognition/
-├── classes/
-│   ├── data_handler.py     # Data loading/preprocessing
-│   ├── model_trainer.py    # Model building/training
-│   └── predictor.py        # Prediction logic
-├── st_pages/
-│   ├── train_page.py       # Training interface
-│   ├── test_page.py        # Testing interface
-│   ├── results_page.py     # Results visualization
-│   ├── predict_page.py     # Prediction interface
-│   └── exit_page.py        # Application exit
-├── tests/                  # Unit tests
-├── .streamlit/             # Configuration
-│   └── secrets.toml        # Local secrets
-├── main.py                 # Main application
-├── requirements.txt        # Dependencies
-└── README.md               # This file
+  arabic-handwriting-recognition/
+  ├── classes/
+  │   ├── data_handler.py     # Data loading/preprocessing
+  │   ├── model_trainer.py    # Model building/training
+  │   └── predictor.py        # Prediction logic
+  ├── st_pages/
+  │   ├── train_page.py       # Training interface
+  │   ├── test_page.py        # Testing interface
+  │   ├── results_page.py     # Results visualization
+  │   ├── predict_page.py     # Prediction interface
+  │   └── exit_page.py        # Application exit
+  ├── tests/                  # Unit tests
+  ├── .streamlit/             # Configuration
+  │   └── secrets.toml        # Local secrets
+  ├── main.py                 # Main application
+  ├── requirements.txt        # Dependencies
+  └── README.md               # This file
 
 
 ## 🌐 Streamlit Cloud Deployment
-
-1.Fork this repository
-2. Go to Streamlit Cloud https://share.streamlit.io/
+1. Fork this repository
+2. Go to Streamlit Cloud [https://share.streamlit.io/]
 3. Click "New app" and connect your GitHub
 4. Set:
-  - Repository: OsamaRabih/arabic-handwriting-recognition
-  - Branch: main
-  - Main file path: main.py
+    - **Repository**: OsamaRabih/arabic-handwriting-recognition
+    - **Branch**: main
+    - **Main file path**: main.py
 5. Configure secrets in Settings if needed
 
 ## 🧪 Testing
-Run tests
-
+### Run tests
 ```bash
 pytest tests/ -v
-# Check coverage
+Check coverage
 coverage run -m pytest tests/
 coverage report -m
 
