@@ -50,17 +50,30 @@
 streamlit run main.py
 
 #### Application Workflow
-  1. Training Page: 📊 Upload CSV datasets → ⚙️ Configure model → 📈 Monitor training
-    - Upload CSV datasets (features and labels)
-    - Configure model with/without attention
-    - Monitor training progress
-  2. Testing Page: 🧪 Evaluate performance → 👀 View predictions
-    - Evaluate model performance
-    - View sample predictions
-  2.Results Page: 👀 Visualise training metrics → 📤 Export model performance data
-    - Visualise training metrics
+1. Training Page: 📊 Upload CSV datasets → ⚙️ Configure model → 📈 Monitor training
+- Upload CSV datasets (features and labels)
+- Configure model with/without attention
+- Monitor training progress
+2. Testing Page: 🧪 Evaluate performance → 👀 View predictions
+ - Evaluate model performance
+ - View sample predictions
+3. Results Page: 👀 Visualise training metrics → 📤 Export model performance data
+   
+4. 
+   
+
+
+  4.
+  5.
+  6.
+  7.
+  8. 
+    - 
+ 
+  2.
+    -
     - Export model performance data
-  3. Prediction Page: ✍️ Draw characters OR 📤 Upload images → 🔮 Get predictions
+  9. Prediction Page: ✍️ Draw characters OR 📤 Upload images → 🔮 Get predictions
     - Draw characters or upload images
     - Get real-time predictions
 
