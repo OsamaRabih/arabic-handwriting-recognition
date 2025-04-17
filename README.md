@@ -97,7 +97,6 @@ graph LR
     C --> I[Predict Page]
     C --> J[Exit Page]
 
-
 ## 🌐 Streamlit Cloud Deployment
 1. Fork this repository
 2. Go to Streamlit Cloud [https://share.streamlit.io/]
@@ -111,11 +110,12 @@ graph LR
 ## 🧪 Testing
 ### Run tests
 Test this system via running this code:
-```bash
+'''bash
 pytest tests/ -v
-#Check coverage
+# Check coverage
 coverage run -m pytest tests/
 coverage report -m
+'''
 
 ## 🤝 Contributing
 1. Fork the project
