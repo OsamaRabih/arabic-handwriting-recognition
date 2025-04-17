@@ -13,7 +13,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 tf.get_logger().setLevel('ERROR')
 
 # Set page title and icon
-st.set_page_config(page_title="Arabic Handwriting Recognition", page_icon="🖋️")
+st.set_page_config(page_title="Arabic Handwriting Recognition", page_icon="🖋️", layout="wide")
 # Create necessary directories if they don't exist
 os.makedirs("assets/models", exist_ok=True)
 
@@ -105,7 +105,14 @@ def main():
     4. Make 🔮 Predictions
     """)
     st.sidebar.markdown("---")
-    st.sidebar.markdown("### About")
+    st.sidebar.markdown("""
+    ## About
+    **Bradford College Final Year Project**  
+    **Developer:** Osama Rabih  
+    **Supervisor:** Dr. Sokyna  
+    **Version:** 1.0  
+    [GitHub Repository](https://github.com/OsamaRabih/arabic-handwriting-recognition)
+    """)
     st.sidebar.info(
         "This app is designed to recognize Arabic handwritten characters using a deep learning model."
     )
