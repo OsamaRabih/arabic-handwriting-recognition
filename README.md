@@ -27,7 +27,8 @@
     - Real-time visualisation 
 
 ## 📦 Installation
-
+```sh
+  streamlit run main.py
 ### Prerequisites
   - Python 3.8-3.11
   - pip or conda
