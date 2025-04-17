@@ -2,7 +2,9 @@
 
 ![Project Banner](https://via.placeholder.com/1200x400/2D3748/FFFFFF?text=Arabic+Handwriting+Recognition+with+CNN-LSTM+and+Attention+Mechanism)
 Final Year Project @ Bradford College
+
 Supervised by Dr. Sokyna
+
 Developed by Osama Rabih
 
 **Final year project** - A deep learning system for recognising handwritten Arabic characters using a hybrid CNN-LSTM architecture with optional attention mechanism, deployed as a Streamlit web application.
@@ -50,7 +52,7 @@ Developed by Osama Rabih
 
 ## 🖥️ Usage
 **Running Locally**: Write this command to run the system in your local machine
-'''bash
+"""bash
 streamlit run main.py
 
 ## Application Workflow
