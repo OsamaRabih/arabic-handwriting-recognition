@@ -10,12 +10,12 @@ import streamlit as st
 # Data handling operations
 class DataHandler:
     """
-    Handles data loading and preprocessing operations
+    Handles data loading and preprocessing operations 
     """   
     @staticmethod
     def load_data(features_file, labels_file):
         """
-        Loads and preprocesses training data from CSV files        
+        Loads and preprocesses CSV data    
         Args:
             features_file (UploadedFile): Streamlit uploaded file object for features
             labels_file (UploadedFile): Streamlit uploaded file object for labels          
