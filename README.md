@@ -1,6 +1,9 @@
 # Arabic Handwriting Recognition System
 
 ![Project Banner](https://via.placeholder.com/1200x400/2D3748/FFFFFF?text=Arabic+Handwriting+Recognition+with+CNN-LSTM+and+Attention+Mechanism)
+Final Year Project @ Bradford College
+Supervised by Dr. Sokyna
+Developed by Osama Rabih
 
 **Final year project** - A deep learning system for recognising handwritten Arabic characters using a hybrid CNN-LSTM architecture with optional attention mechanism, deployed as a Streamlit web application.
 
@@ -47,6 +50,8 @@
 
 ## 🖥️ Usage
 **Running Locally**: Write this command to run the system in your local machine
+'''bash
+streamlit run main.py
 
 ## Application Workflow
 
@@ -65,38 +70,32 @@
     - 🔮 Get real-time predictions
 
 ## 🧠 Model Architecture
-
 graph TD
-  A[32x32 Input Image] --> B[CNN Block]
-      B --> C[Max Pooling]
-      C --> D[LSTM Layer]
-      D --> E{Attention?}
-      E -->|Yes| F[Attention Mechanism]
-      E -->|No| G[Fully Connected]
-      F --> G
-      G --> H[28-Class Softmax]
-      style A fill:#f9f,stroke:#333
-      style H fill:#4CAF50,stroke:#333
+    A[32x32 Input] --> B[Conv2D(32)+BN]
+    B --> C[MaxPooling2D]
+    C --> D[Conv2D(64)+BN]
+    D --> E[MaxPooling2D]
+    E --> F[Conv2D(128)+BN]
+    F --> G[Reshape→LSTM(128)]
+    G --> H{Attention?}
+    H -->|Yes| I[Attention Layer]
+    H -->|No| J[Dense(28)+Softmax]
+    I --> J
+    style A fill:#FFD700,stroke:#333
+    style J fill:#4CAF50,stroke:#333
+
 
 ## 📂 Project Structure
-
-  arabic-handwriting-recognition/
-  ├── classes/
-  │   ├── data_handler.py     # Data loading/preprocessing
-  │   ├── model_trainer.py    # Model building/training
-  │   └── predictor.py        # Prediction logic
-  ├── st_pages/
-  │   ├── train_page.py       # Training interface
-  │   ├── test_page.py        # Testing interface
-  │   ├── results_page.py     # Results visualization
-  │   ├── predict_page.py     # Prediction interface
-  │   └── exit_page.py        # Application exit
-  ├── tests/                  # Unit tests
-  ├── .streamlit/             # Configuration
-  │   └── secrets.toml        # Local secrets
-  ├── main.py                 # Main application
-  ├── requirements.txt        # Dependencies
-  └── README.md               # This file
+graph LR
+    A[main.py] --> B[classes/]
+    A --> C[st_pages/]
+    B --> D[DataHandler]
+    B --> E[ModelTrainer]
+    B --> F[Predictor]
+    C --> G[Train Page]
+    C --> H[Test Page]
+    C --> I[Predict Page]
+    C --> J[Exit Page]
 
 
 ## 🌐 Streamlit Cloud Deployment
@@ -111,9 +110,10 @@ graph TD
 
 ## 🧪 Testing
 ### Run tests
+Test this system via running this code:
 ```bash
 pytest tests/ -v
-Check coverage
+#Check coverage
 coverage run -m pytest tests/
 coverage report -m
 
