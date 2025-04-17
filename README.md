@@ -27,8 +27,6 @@
     - Real-time visualisation 
 
 ## 📦 Installation
-```sh
-  streamlit run main.py
 ### Prerequisites
   - Python 3.8-3.11
   - pip or conda
@@ -49,9 +47,6 @@
 
 ## 🖥️ Usage
 **Running Locally**: Write this command to run the system in your local machine
-  ```sh
-  streamlit run main.py
-
 
 ## Application Workflow
 
