@@ -46,9 +46,10 @@
    pip install -r requirements.txt
 
 ## 🖥️ Usage
-### Running Locally
+**Running Locally**: Write this command to run the system in your local machine
 ```bash
 streamlit run main.py
+"""
 
 ## Application Workflow
 1. Training Page:
