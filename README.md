@@ -67,7 +67,7 @@
 ## 🧠 Model Architecture
 
 graph TD
-      A[32x32 Input Image] --> B[CNN Block]
+  A[32x32 Input Image] --> B[CNN Block]
       B --> C[Max Pooling]
       C --> D[LSTM Layer]
       D --> E{Attention?}
@@ -81,6 +81,7 @@ graph TD
 ## 📂 Project Structure
 
   arabic-handwriting-recognition/
+
   ├── classes/
   │   ├── data_handler.py     # Data loading/preprocessing
   │   ├── model_trainer.py    # Model building/training
