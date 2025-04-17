@@ -65,7 +65,8 @@
   - 🔮 Get real-time predictions
 
 ## 🧠 Model Architecture
-  graph TD
+
+graph TD
       A[32x32 Input Image] --> B[CNN Block]
       B --> C[Max Pooling]
       C --> D[LSTM Layer]
@@ -78,6 +79,7 @@
       style H fill:#4CAF50,stroke:#333
 
 ## 📂 Project Structure
+
   arabic-handwriting-recognition/
   ├── classes/
   │   ├── data_handler.py     # Data loading/preprocessing
@@ -108,6 +110,7 @@
 
 ## 🧪 Testing
 # Run tests
+
 ```bash
 pytest tests/ -v
 # Check coverage
