@@ -75,9 +75,8 @@ streamlit run main.py
     - 🔮 Get real-time predictions
 
 ## 🧠 Model Architecture
-
+/
 graph TD
-
     A[32x32 Input] --> B[Conv2D(32)+BN]
     B --> C[MaxPooling2D]
     C --> D[Conv2D(64)+BN]
@@ -91,11 +90,24 @@ graph TD
     style A fill:#FFD700,stroke:#333
     style J fill:#4CAF50,stroke:#333
 
-
+flowchart TD
+    ReadMe[ReadMe Documentation] --> Guides[Guides]
+    ReadMe --> APIRef[API Reference]
+    
+    Guides --> Editor[Editor UI]
+    Editor --> Slash[Slash Commands]
+    Slash --> Mermaid[Mermaid Diagrams]
+    Slash --> Other[Other Blocks]
+    
+    APIRef --> OpenAPI[OpenAPI Spec]
+    APIRef --> Manual[Manual Editor]
+    
+    style ReadMe fill:#f9f,stroke:#333,stroke-width:4px
+    style Mermaid fill:#bbf,stroke:#333,stroke-width:2px
+    
 ## 📂 Project Structure
 
 graph LR
-
     A[main.py] --> B[classes/]
     A --> C[st_pages/]
     B --> D[DataHandler]
@@ -121,7 +133,7 @@ graph LR
 
 Test this system via running this code:
 
-'''bash
+'''
 pytest tests/ -v
 # Check coverage
 coverage run -m pytest tests/
@@ -130,9 +142,16 @@ coverage report -m
 
 ## 🤝 Contributing
 1. Fork the project
-2. Create your feature branch (git checkout -b feature/AmazingFeature)
-3. Commit your changes (git commit -m 'Add some amazing feature')
-4. Push to the branch (git push origin feature/AmazingFeature)
+2. Create your feature branch
+'''
+git checkout -b feature/AmasingFeature
+'''
+4.
+5.
+6.
+7. 
+8. Commit your changes (git commit -m 'Add some amasing feature')
+9. Push to the branch (git push origin feature/AmasingFeature)
 5 Open a Pull Request
 
 ## 📜 License
@@ -143,7 +162,7 @@ Distributed under the MIT License. See LICENSE for more information.
 
 **Osama Rabih** - rabih.osama91@gmail.com
 
-**Project Link** : https://github.com/OsamaRabih/arabic-handwriting-recognition
+**Project GitHub Link** : [Arabic Handwriting Charecters Recognition System ](https://github.com/OsamaRabih/arabic-handwriting-recognition)
 
 
 
