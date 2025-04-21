@@ -5,6 +5,7 @@ Predictorr Module
 # Import required libraries
 import numpy as np
 import streamlit as st
+import tensorflow as tf
 from classes.data_handler import DataHandler
 from PIL import Image
 
@@ -17,8 +18,22 @@ class Predictor:
         'ل', 'م', 'ن', 'ه', 'و', 'ي'
     ]
 
-    def __init__(self, model):
-        self.model = model
+    @staticmethod
+    def load_model(model_path):
+        """
+        Helper method to load model with custom objects
+        """
+        try:
+            custom_objects = {
+                'Lambda': tf.keras.layers.Lambda(
+                    lambda x: tf.squeeze(x, axis=1),
+                    output_shape=(32, 32, 1)
+                )
+            }
+            return tf.keras.models.load_model(model_path, custom_objects=custom_objects)
+        except Exception as e:
+            st.error(f"Model loading error: {str(e)}")
+            return None
 
     @staticmethod
     def predict_image(model, image):
