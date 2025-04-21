@@ -24,16 +24,28 @@ class Predictor:
         Helper method to load model with custom objects
         """
         try:
+            # Enable unsafe deserialization only for this load
+            tf.keras.config.enable_unsafe_deserialization()
+            # Define the squeeze function exactly as in ModelTrainer class to desirialize Lambda 
+            def squeeze_layer(x):
+                return tf.squeeze(x, axis=1)
             custom_objects = {
-                'Lambda': tf.keras.layers.Lambda(
-                    lambda x: tf.squeeze(x, axis=1),
-                    output_shape=(32, 32, 1)
-                )
+            "squeeze_layer": squeeze_layer,
+            "Lambda": tf.keras.layers.Lambda(squeeze_layer)
             }
-            return tf.keras.models.load_model(model_path, custom_objects=custom_objects)
+            
+            model = tf.keras.models.load_model(
+                model_path,
+                custom_objects=custom_objects,
+                safe_mode=False
+            )
+            return model
         except Exception as e:
             st.error(f"Model loading error: {str(e)}")
             return None
+        finally:
+            # Reset to default safe mode
+            tf.keras.config.disable_unsafe_deserialization()
 
     @staticmethod
     def predict_image(model, image):

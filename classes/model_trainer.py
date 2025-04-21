@@ -39,9 +39,12 @@ class ModelTrainer:
                     )
             # Define input layer
             inputs = tf.keras.layers.Input(shape=input_shape)
-            # Remove singleton dimension
-            ## Remove the extra sequence dimension (of size 1) so that the input becomes (32,32,1)
-            x = tf.keras.layers.Lambda(lambda x: tf.squeeze(x, axis=1), output_shape=(32, 32, 1))(inputs)
+            # Define the Lambda layer as a named function for safe serialization 
+            def squeeze_layer(x):
+                return tf.squeeze(x, axis=1)
+            
+            # Use the named function instead of lambda to remove the extra sequence dimension (of size 1) so that the input becomes (32,32,1
+            x = tf.keras.layers.Lambda(squeeze_layer, name="squeeze_layer", output_shape=(32, 32, 1))(inputs)
             # CNN Feature Maps Blocks
             ## First CNN block
             x = tf.keras.layers.Conv2D(32, (3,3), activation='relu', padding='same')(x)
@@ -84,15 +87,14 @@ class ModelTrainer:
                         loss='sparse_categorical_crossentropy',
                         metrics=['accuracy'])
             # Verify model can be saved and loaded with safe_mode
-            try:
-                test_path = "test_model.keras"
-                model.save(test_path)
-                # Explicit safe_mode
-                tf.keras.models.load_model(test_path, safe_mode=False)  
-                os.remove(test_path)
-            except Exception as e:
-                st.error(f"Model save/load verification failed: {str(e)}")
-                return None
+            ## Create path
+            test_path = "test_model.keras"
+            # Svae the model to the created path
+            model.save(test_path)
+            # Explicit false safe_mode to load the model
+            tf.keras.models.load_model(test_path, safe_mode=False)  
+            # Remove the path
+            os.remove(test_path)
             # Return compiled model
             return model
         # Handle any errors
