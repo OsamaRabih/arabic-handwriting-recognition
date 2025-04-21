@@ -8,6 +8,8 @@ import tensorflow as tf
 from PIL import Image
 from classes.predictor import Predictor
 from streamlit_drawable_canvas import st_canvas
+import tempfile
+import os
 
 def show():
     # Set page title with emoji
@@ -25,13 +27,32 @@ def show():
             # Save uploaded model temporarily
             with open("temp_model.keras", "wb") as f:
                 f.write(uploaded_model.getbuffer())
-                
+
             # Call the method to load the model 
             st.session_state.model = Predictor.load_model("temp_model.keras")
             if st.session_state.model:
                 st.success("✅ Model loaded successfully!")
+            # Save to temp file
+            with tempfile.NamedTemporaryFile(delete=False, suffix='.keras') as tmp:
+                tmp.write(uploaded_model.getbuffer())
+                tmp_path = tmp.name
+            
+            # Load using our safe method
+            st.session_state.model = Predictor.load_model(tmp_path)
+            
+            if st.session_state.model:
+                st.success("✅ Model loaded successfully!")
+            else:
+                st.error("Failed to load model")
         except Exception as e:
-            st.error(f"❌ Error loading model: {str(e)}")
+            st.error(f"❌ Error: {str(e)}")
+        finally:
+            # Clean up temp file
+            if 'tmp_path' in locals():
+                try:
+                    os.unlink(tmp_path)
+                except:
+                    pass
     # Check if model is available
     if st.session_state.model is None:
         # Show warning if no model
