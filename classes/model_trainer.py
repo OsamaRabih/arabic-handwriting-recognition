@@ -37,14 +37,13 @@ class ModelTrainer:
                         gpus[0],
                         [tf.config.LogicalDeviceConfiguration(memory_limit=memory_limit)]
                     )
+            # Define the squeeze operation as a named function
+            def squeeze_operation(x):
+                return tf.squeeze(x, axis=1)
             # Define input layer
             inputs = tf.keras.layers.Input(shape=input_shape)
-            # Define the Lambda layer as a named function for safe serialization 
-            def squeeze_layer(x):
-                return tf.squeeze(x, axis=1)
-            
-            # Use the named function instead of lambda to remove the extra sequence dimension (of size 1) so that the input becomes (32,32,1
-            x = tf.keras.layers.Lambda(squeeze_layer, name="squeeze_layer", output_shape=(32, 32, 1))(inputs)
+            # Use the named function in lambda to remove the extra sequence dimension (of size 1) so that the input becomes (32,32,1
+            x = tf.keras.layers.Lambda(squeeze_operation, name="squeeze_layer")(inputs)
             # CNN Feature Maps Blocks
             ## First CNN block
             x = tf.keras.layers.Conv2D(32, (3,3), activation='relu', padding='same')(x)
@@ -83,19 +82,7 @@ class ModelTrainer:
         
             # Create and compile model
             model = tf.keras.models.Model(inputs=inputs, outputs=outputs)
-            model.compile(optimizer='adam',
-                        loss='sparse_categorical_crossentropy',
-                        metrics=['accuracy'])
-            # Verify model can be saved and loaded with safe_mode
-            ## Create path
-            test_path = "test_model.keras"
-            # Svae the model to the created path
-            model.save(test_path)
-            # Explicit false safe_mode to load the model
-            tf.keras.models.load_model(test_path, safe_mode=False)  
-            # Remove the path
-            os.remove(test_path)
-            # Return compiled model
+            model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
             return model
         # Handle any errors
         except Exception as e:
@@ -104,6 +91,37 @@ class ModelTrainer:
             # Return empty value
             return None
         
+    @staticmethod
+    def load_model(model_path):
+        """
+        Safely loads a saved model with custom Lambda layer handling
+        Args:
+            model_path (str): Path to the saved model
+        Returns:
+            tf.keras.Model: Loaded model or None if failed
+        """
+        try:
+            # Define the squeeze function exactly as in the original model
+            def squeeze_operation(x):
+                return tf.squeeze(x, axis=1)
+            
+            # Register custom objects
+            custom_objects = {
+                'squeeze_operation': squeeze_operation,
+                'squeeze_layer': tf.keras.layers.Lambda(squeeze_operation)
+            }
+            
+            # Load with custom objects and safe_mode=False
+            model = tf.keras.models.load_model(
+                model_path,
+                custom_objects=custom_objects,
+                safe_mode=False
+            )
+            return model
+        except Exception as e:
+            st.error(f"Model loading error: {str(e)}")
+            return None
+
     @staticmethod
     def train_model(model, X_train, y_train, epochs=20, batch_size=128):
         """
