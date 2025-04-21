@@ -41,7 +41,7 @@ class ModelTrainer:
             inputs = tf.keras.layers.Input(shape=input_shape)
             # Remove singleton dimension
             ## Remove the extra sequence dimension (of size 1) so that the input becomes (32,32,1)
-            x = tf.keras.layers.Lambda(lambda x: tf.squeeze(x, axis=1))(inputs)
+            x = tf.keras.layers.Lambda(lambda x: tf.squeeze(x, axis=1), output_shape=(32, 32, 1))(inputs)
             # CNN Feature Maps Blocks
             ## First CNN block
             x = tf.keras.layers.Conv2D(32, (3,3), activation='relu', padding='same')(x)
