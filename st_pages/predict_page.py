@@ -25,10 +25,11 @@ def show():
             # Save uploaded model temporarily
             with open("temp_model.keras", "wb") as f:
                 f.write(uploaded_model.getbuffer())
-            
-            # Load the model with False safe mode 
-            st.session_state.model = tf.keras.models.load_model("temp_model.keras", safe_mode=False)
-            st.success("✅ Model loaded successfully!")
+                
+            # Call the method to load the model 
+            st.session_state.model = Predictor.load_model("temp_model.keras")
+            if st.session_state.model:
+                st.success("✅ Model loaded successfully!")
         except Exception as e:
             st.error(f"❌ Error loading model: {str(e)}")
     # Check if model is available
