@@ -83,6 +83,16 @@ class ModelTrainer:
             model.compile(optimizer='adam',
                         loss='sparse_categorical_crossentropy',
                         metrics=['accuracy'])
+            # Verify model can be saved and loaded with safe_mode
+            try:
+                test_path = "test_model.keras"
+                model.save(test_path)
+                # Explicit safe_mode
+                tf.keras.models.load_model(test_path, safe_mode=False)  
+                os.remove(test_path)
+            except Exception as e:
+                st.error(f"Model save/load verification failed: {str(e)}")
+                return None
             # Return compiled model
             return model
         # Handle any errors
