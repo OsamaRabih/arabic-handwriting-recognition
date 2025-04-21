@@ -32,16 +32,12 @@ def show():
     col1, col2 = st.columns(2)
     with col1:
         # Upload training features with session persistence
-        train_features = st.file_uploader("Training Images (CSV)", 
-                                        type=['csv'], 
-                                        key='train_features')
+        train_features = st.file_uploader("Training Images (CSV)", key='train_features')
         if train_features:
             st.session_state.train_features_data = train_features.getvalue()  
     with col2:
         # Upload training labels with session persistence
-        train_labels = st.file_uploader("Training Labels (CSV)", 
-                                      type=['csv'], 
-                                      key='train_labels')
+        train_labels = st.file_uploader("Training Labels (CSV)", key='train_labels')
         if train_labels:
             st.session_state.train_labels_data = train_labels.getvalue() 
         
