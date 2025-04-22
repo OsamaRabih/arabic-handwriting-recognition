@@ -99,7 +99,7 @@ def main():
     # Display instructions for navigation
     st.sidebar.info("""
     **How to use:**
-    1. Download CSV Files:[Here](https://www.kaggle.com/datasets/mloey1/ahcd1)                
+    1. Download CSV Files               
     2. Start with 🎓 Train Model
     3. Test with 🧪 Test Model
     4. View 📊 Results
@@ -112,7 +112,8 @@ def main():
     **Developer**: *Osama Rabih* 💪 
     **Supervisor**: *Dr. Sokyna* 💪
     **Version**: [1.0]  
-    GitHub Repository Link [**Here**](https://github.com/OsamaRabih/arabic-handwriting-recognition)
+    GitHub Repository Link [**Here🔗**](https://github.com/OsamaRabih/arabic-handwriting-recognition)
+     CSV Files:[**Here 📥**](https://www.kaggle.com/datasets/mloey1/ahcd1)                    
     """)
     st.sidebar.info(
         "👍 This app is designed to recognise Arabic handwritten characters using a deep learning model."
