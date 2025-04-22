@@ -104,17 +104,17 @@ def main():
     3. View 📊 Results
     4. Make 🔮 Predictions
     """)
-    st.sidebar.markdown("---")
+
     st.sidebar.markdown("""
-    ## About
+    ## ✍️ About
     **Bradford College Final Year Project**  
-    **Developer:** Osama Rabih  
-    **Supervisor:** Dr. Sokyna  
-    **Version:** 1.0  
-    [GitHub Repository](https://github.com/OsamaRabih/arabic-handwriting-recognition)
+    **Developer**: *Osama Rabih*  
+    **Supervisor**: *Dr. Sokyna*  
+    **Version**: [1.0]  
+    [GitHub Repository Link Here 🚀](https://github.com/OsamaRabih/arabic-handwriting-recognition)
     """)
     st.sidebar.info(
-        "This app is designed to recognize Arabic handwritten characters using a deep learning model."
+        "This app is designed to recognise Arabic handwritten characters using a deep learning model✅."
     )
 # Run main function when script is executed
 if __name__ == "__main__":
