@@ -33,7 +33,7 @@ class DataHandler:
             # Validate file objects existence
             if features_file is None or labels_file is None:
                 raise ValueError("No files uploaded")   
-            # Validate file extensions (only for direct file uploads)
+            # Validate file format (only for direct file uploads)
             if hasattr(features_file, 'name') and hasattr(labels_file, 'name'):
                 if not (features_file.name.endswith('.csv') and labels_file.name.endswith('.csv')):
                     raise ValueError("Only CSV files are supported")  
@@ -48,7 +48,7 @@ class DataHandler:
             # Handle any errors
             except pd.errors.ParserError:
                 # Raise error value and Show error message
-                raise ValueError("Invalid CSV format")
+                raise ValueError("Invalid CSV file")
             # Validate numeric data
             if not all(np.issubdtype(dtype, np.number) for dtype in X.dtypes):
                 raise ValueError("Non-numeric data detected in features")

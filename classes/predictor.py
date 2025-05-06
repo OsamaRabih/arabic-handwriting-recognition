@@ -11,7 +11,9 @@ from PIL import Image
 
 # Prediction operations
 class Predictor:
-    
+    """
+    Handles Prediction operations
+    """
     # Class attribute with Arabic character labels
     characters =[ 'أ', 'ب', 'ت', 'ث', 'ج', 'ح', 'خ', 'د', 'ذ', 'ر', 'ز',
         'س', 'ش', 'ص', 'ض', 'ط', 'ظ', 'ع', 'غ', 'ف', 'ق', 'ك',
