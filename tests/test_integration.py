@@ -1,5 +1,13 @@
 
 
+"""
+Test Integration Model validates cross-module workflows:
+
+Training → Saving → Prediction (Path Coverage)
+
+Canvas → Preprocessing → Prediction (Condition Coverage)
+"""
+# Import required libraries and files
 import pytest
 import numpy as np
 from PIL import Image
