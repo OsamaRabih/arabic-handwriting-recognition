@@ -109,8 +109,8 @@ def main():
     st.sidebar.markdown("""
     ## ✍️ About
     **Bradford College Final Year Project**  
-    **Developer**: *Osama Rabih* 💪 
-    **Supervisor**: *Dr. Sokyna* 💪
+    **Developer**: *Osama Rabih*  
+    **Supervisor**: *Dr. Sokyna* 
     **Version**: [1.0]  
     GitHub Repository Link [**Here🔗**](https://github.com/OsamaRabih/arabic-handwriting-recognition)
      CSV Files:[**Here 📥**](https://www.kaggle.com/datasets/mloey1/ahcd1)                    
