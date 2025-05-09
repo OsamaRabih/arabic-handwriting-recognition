@@ -1,6 +1,7 @@
 
 """
-DataHandler.preprocess_image() Validation
+DataHandler Module Validation covers all branches in DataHandler 
+(file validation, reshaping, normalization).
 """
 import unittest
 from PIL import Image
@@ -72,7 +73,8 @@ class TestDataHandler(unittest.TestCase):
         # Mock model that returns dummy probabilities
         class MockModel:
             def predict(self, x, verbose=0):
-                return np.array([[0.01]*28])  # Uniform probabilities
+                # Uniform probabilities
+                return np.array([[0.01]*28])  
         
         # Execute prediction
         pred_class, confidence, processed_img = Predictor.predict_image(MockModel(), img)
